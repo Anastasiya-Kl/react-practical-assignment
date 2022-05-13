@@ -3,6 +3,7 @@ import getPosts from '../api/GetPosts';
 import { mainSelector, setTotalPages, setPosts } from "../redux/mainReducer";
 import Post from './Post';
 import { useEffect } from "react";
+import '../css/PostsGallery.css';
 
 export default function PostsGallery() {
 
