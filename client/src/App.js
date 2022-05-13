@@ -5,6 +5,7 @@ import LoginPage from './components/LoginPage';
 import { useSelector } from 'react-redux';
 import { mainSelector } from './redux/mainReducer';
 import CreatePostModal from './components/CreatePostModal';
+import PostCommentsModal from './components/PostCommentsModal';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
     <div className="App">
       {isLogged ? <MainPage/> : <LoginPage/>}
       {modalWindow === 'CreatePostModal' && <CreatePostModal />}
-      {/* {modalWindow === 'PostCommentsModal' && <PostCommentsModal />} */}
+      {modalWindow === 'PostCommentsModal' && <PostCommentsModal />}
     </div>
   );
 }
