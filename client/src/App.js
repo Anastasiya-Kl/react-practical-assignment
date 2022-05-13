@@ -1,8 +1,13 @@
 import {useEffect} from 'react';
 import './App.css';
 import MainPage from './components/MainPage';
+import LoginPage from './components/LoginPage';
+import { useSelector } from 'react-redux';
+import { mainSelector } from './redux/mainReducer';
 
 function App() {
+
+  const { isLogged, modalWindow } = useSelector(mainSelector);
 
   useEffect(() => {
     // TEST API, it might be removed
@@ -13,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <MainPage />
+      {isLogged ? <MainPage/> : <LoginPage/>}
     </div>
   );
 }

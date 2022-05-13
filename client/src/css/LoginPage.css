@@ -1,0 +1,32 @@
+.LoginPage {
+    margin: 150px auto;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.LoginInput{
+    height: 30px;
+    width: 350px;
+    padding: 10px;
+    border: 2px solid rgb(163, 3, 110);
+    margin-right: 15px;
+    outline: none;
+}
+
+.LoginButton{
+    color: white;
+    background-color: rgb(163, 3, 110);
+    border: none;
+    width: 75px;
+}
+
+.LoginButton:hover{
+    background-color: rgb(163, 3, 110);
+}
+
+.LoginWarning{
+    position: fixed;
+    top: 60px;
+    color: red;
+}

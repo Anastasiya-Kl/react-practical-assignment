@@ -6,9 +6,9 @@ import { useEffect } from "react";
 
 export default function PostsGallery() {
 
-    const dispatch = useDispatch();
     const {posts, page} = useSelector(mainSelector);
-
+    const dispatch = useDispatch();
+    
     useEffect(() => {
         getPosts(page).then(res => {
             dispatch(setTotalPages(res.totalPages));

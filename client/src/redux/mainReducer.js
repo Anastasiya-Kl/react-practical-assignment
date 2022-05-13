@@ -1,41 +1,47 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from '@reduxjs/toolkit';
 
-const initialState = {
-    user: '',
-    isLogin: false,
+export const initState = {
+    userName:'',
+    isLogged: false,    
     posts: [],
     page: 1,
     totalPages: '',
     search: '',
-}
+    modalWindow: 'None',
+};
 
-const mainSlice = createSlice({
-    name: 'main',
-    initialState: initialState,
-    reducers: {
-        setUser(state, action) {
-            state.user = action.payload;
+const slice = createSlice({
+    name:'main',
+    initialState:initState,
+    reducers:{
+        changeUserName: (state, {payload}) => {
+            state.userName = payload;
         },
-        changeIsLogin(state) {
-            state.isLogin = !state.isLogin;
+        changeIsLogged: state => {
+            state.isLogged = !state.isLogged;
         },
-        setPosts(state, action) {
-            state.posts = action.payload;
+        setPosts: (state, {payload}) => {
+            state.posts = payload;
         },
-        setPage(state, action) {
-            state.page = action.payload;
+        setPage: (state, {payload}) => {
+            state.page = payload;
         },
-        setTotalPages(state, action) {
-            state.totalPages = action.payload;
+        setSearch: (state, {payload}) => {
+            state.search = payload;
         },
-        setSearch(state, action) {
-            state.search = action.payload; 
+        setModalWindow: (state, {payload}) => {
+            state.modalWindow = payload;
+        },
+        setTotalPages: (state, {payload}) => {
+            state.totalPages = payload;
         }
-    }
+    }       
 });
 
-export default mainSlice.reducer;
+export default slice.reducer;
 
-export const {setUser, changeIsLogin, setPosts, setPage, setTotalPages, setSearch} = mainSlice.actions;
+export const {
+   changeUserName, changeIsLogged,setPosts, setPage, setSearch, setModalWindow, setTotalPages
+} = slice.actions;
 
-export const mainSelector = (state) => state.main;
+export const mainSelector = state => state.main
