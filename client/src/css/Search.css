@@ -1,0 +1,13 @@
+.SearchBar{
+    width: 20%;
+    margin: 20px auto;
+}
+
+.SearchBarInput{
+    width: 80%;
+    margin: 0 auto;
+    height: 18px;
+    padding: 8px;
+    border: 2px solid rgb(163, 3, 110);
+    outline: none;
+}
