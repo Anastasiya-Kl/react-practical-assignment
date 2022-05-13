@@ -5,6 +5,8 @@ import getPosts from "../api/GetPosts";
 import updateComment from "../api/UpdateComment";
 import {setComment, setCommentId, setCommentLikes, setCoommentDislikes, setCommentMode} from '../redux/createCommentReducer';
 import '../css/Comment.css';
+import like from '../like.png';
+import dislike from '../dislike.png';
 
 export default function Comment(props) {
 
@@ -49,13 +51,15 @@ export default function Comment(props) {
         <p className="CommentDate">{commentDate.slice(0,24)}</p>
         <div className="CommentButtons">            
 
-                <button onClick={() => likeComment(comment.id)}>Like</button>
+                <button onClick={() => likeComment(comment.id)}><img src={like} width="25px" alt='like' /></button>
                 <p>{comment.likes.length - comment.dislikes.length}</p>
-                <button onClick={() => dislikeComment(comment.id)}>Dislike</button>
+                <button onClick={() => dislikeComment(comment.id)}><img src={dislike} width="25px" alt='dislike' /></button>
 
-            {comment.username === userName && <>
-                <button onClick={() => editComment()}>Edit</button>
-                <button onClick={() => deleteCommentHandler(comment.id)}>Delete</button>      </>}
+            {comment.username === userName && 
+                <>
+                    <button onClick={() => editComment()}>Edit</button>
+                    <button onClick={() => deleteCommentHandler(comment.id)}>Delete</button>      
+                </>}
             </div>
     </div>
 }

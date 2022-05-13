@@ -8,6 +8,8 @@ import { setCommentedPostId } from "../redux/createCommentReducer";
 import { setMode, setTitle, setId, setPostDislikes, setPostLikes } from "../redux/createPostReducer";
 import CommentSection from "./CommentSection";
 import '../css/Post.css';
+import like from '../like.png';
+import dislike from '../dislike.png';
 
 export default function Post(props) {
 
@@ -18,7 +20,15 @@ export default function Post(props) {
 
     const [commentSectionVision, setCommentsSectionVision] = useState('none');
 
-    let postDate = new Date(props.date).toString('dd MM YYYY');
+    let postDate = new Date(post.date).toString('dd MM YYYY');
+
+    async function deletePostHandler(id) {
+        await deletePost(id);
+        await getPosts(page).then(res => {
+            dispatch(setTotalPages(res.totalPages));
+            dispatch(setPosts(res.result));
+        });
+    }
 
     function likePost(id) {
         let likes = [...post.likes];
@@ -46,24 +56,17 @@ export default function Post(props) {
         dispatch(setPostDislikes(post.dislikes));
     }
 
-    async function deletePostHandler(id) {
-        await deletePost(id);
-        await getPosts(page).then(res => {
-            dispatch(setTotalPages(res.totalPages));
-            dispatch(setPosts(res.result));
-        });
-    }
-
+    
     return <div className='Post'>
-        <h2 className='Title'>{props.title}</h2>
-        <img className='Image' src={props.imageSrc} alt="imagePost" />
-        <p className='Date'>{postDate}</p>
-        <h3 className='User'>{props.username}</h3>
+        <h2 className='Title'>{post.title}</h2>
+        <img className='Image' src={post.imageSrc} alt="imagePost" />
+        <p className='Date'>{postDate.slice(0,24)}</p>
+        <h3 className='User'>{post.username}</h3>
 
         <div className="Likes">
-            <button onClick={() => likePost(post.id)}>Like</button>
+            <button onClick={() => likePost(post.id)}><img src={like} alt='like' /></button>
             <h3>{post.likes.length - post.dislikes.length}</h3>
-            <button onClick={() => dislikePost(post.id)}>Dislike</button>  
+            <button onClick={() => dislikePost(post.id)}><img src={dislike} alt='dislike' /></button>  
         </div>
 
         <div className="PostButtons">

@@ -4,7 +4,7 @@ import MainPage from './components/MainPage';
 import LoginPage from './components/LoginPage';
 import { useSelector } from 'react-redux';
 import { mainSelector } from './redux/mainReducer';
-import CreatePostModal from './components/CreatePostModal';
+import CreatePostModal from './components/CreatePostModal'
 import PostCommentsModal from './components/PostCommentsModal';
 
 function App() {

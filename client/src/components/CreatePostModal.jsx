@@ -50,30 +50,31 @@ export default function CreatePostModal() {
       dispatch(setTotalPages(res.totalPages));
       dispatch(setPosts(res.result));
     });
-    dispatch(setModalWindow('none'));
+    dispatch(setModalWindow('None'));
     dispatch(setMode('Add'));
   }
 
   return <div className='Shadow'>
-  <div className="CreatePost">
-      <form 
-        onSubmit={(e) => {
-        if(mode === 'Add') onSubmitHandler(e);
-        if(mode === 'Edit') onSubmitHadlerEdit(e)
-      }}
-        className='CreatePostForm'>
-          <h4 className='Window'>Create Post</h4>
-          <input className='FormInput' type="text" name="title" value={title} onChange={e => dispatch(setTitle(e.target.value))}/>
-          <input className='FormFileInput' type="file" name="pictute" id="picture"/>
-          <div className='buttonGroupe'>
-            <button type='submit' >{mode === 'Edit' ? 'Edit' : 'Add'}</button>
-            <button className='Cansel' onClick={() => {
-                dispatch(setTitle(''));
-                dispatch(setModalWindow('None'));
-                dispatch(setMode('Add'));
-              }
-            }>Cansel</button>
-          </div>      
-      </form>
-    </div></div>
+      <div className="CreatePost">
+          <form 
+            onSubmit={(e) => {
+            if(mode === 'Add') onSubmitHandler(e);
+            if(mode === 'Edit') onSubmitHadlerEdit(e)
+          }}
+            className='CreatePostForm'>
+              <h4 className='Window'>Create Post</h4>
+              <input className='FormInput' type="text" name="title" value={title} onChange={e => dispatch(setTitle(e.target.value))}/>
+              <input className='FormFileInput' type="file" name="pictute" id="picture"/>
+              <div className='buttonGroupe'>
+                <button type='submit' >{mode === 'Edit' ? 'Edit' : 'Add'}</button>
+                <button className='Cansel' onClick={() => {
+                    dispatch(setTitle(''));
+                    dispatch(setModalWindow('None'));
+                    dispatch(setMode('Add'));
+                  }
+                }>Cansel</button>
+              </div>      
+          </form>
+        </div>
+    </div>
   }

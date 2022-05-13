@@ -15,5 +15,5 @@ export default function Header() {
             dispatch(changeIsLogged());
             dispatch(setPage(1));
         }}>Log Out</button>
-    </div>
+    </div>    
 }

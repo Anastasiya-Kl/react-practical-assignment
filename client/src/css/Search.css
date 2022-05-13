@@ -1,6 +1,7 @@
 .SearchBar{
-    width: 20%;
-    margin: 20px auto;
+    width: 50%;
+    margin: 30px auto;
+    padding-left: 100px;
 }
 
 .SearchBarInput{

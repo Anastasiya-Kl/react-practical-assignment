@@ -5,8 +5,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     color: rgb(132, 13, 92);
-    box-shadow: 1px 4px 15px 2px rgba(0,0,0,0.73);}
+    box-shadow: 1px 4px 15px 2px rgba(132, 13, 92,0.73);}
 
 .Title{
     align-self: center;
@@ -14,20 +15,17 @@
 }
 
 .Image{
-    width: 150px;
-    height: 150px;
+    width: 50px;
+    height: 50px;
 }
 
-.Date{
-    font-size: small;
+.Date{    
     align-self: flex-start;
     margin-left: 10px;
 }
 
 .User {
-    font-size: small;
-    align-self: flex-end;
-    margin: 0 10px 0 0;
+    margin-bottom: 10px;
 }
 
 .Likes {
@@ -39,12 +37,13 @@
     margin-top: -39px;
 }
 
-.PostButtons {
+.PostButtons {    
     display: flex;
     align-items: center;
 }
 
 .Post button {
+    margin-top: 20px;
     width: 40%;
     border: none;
     background-color: rgb(163, 3, 110);

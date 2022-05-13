@@ -1,16 +1,13 @@
 .Comment{
+    height: 150px;
     border-bottom: 2px solid rgb(163, 3, 110);
 }
 
 .CommentText{
-    margin-top: 5px;
-    font-size: large;
+    margin-top: 5px;    
 }
 
-.CommentDate{
-    font-size: small;
-    margin-top: -16px;
-}
+
 
 .CommentButtons{
     width: 90%;
