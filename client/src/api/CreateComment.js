@@ -17,7 +17,7 @@ async function createComment(text, postId, username) {
         body: JSON.stringify(data),
     });
 
-    return response.json().id;
+    return response.json();
 }
 
 export default createComment;

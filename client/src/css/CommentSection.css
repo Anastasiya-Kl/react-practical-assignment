@@ -1,7 +1,7 @@
 .CommentsSection{
     position: absolute;
-    top: 25%;
-    left: 2.5%;
+    top: 10%;
+    left: 2%;
     width: 95%;
     min-height: 400px;
     height: fit-content;
@@ -12,8 +12,10 @@
 }
 
 .CommentSectionClose{
-    margin: 10px 0 2px 30px;
+    margin: auto;
     background-color: white;
+    height: 30px;
+    align-self: center;
 }
 
 .CommentsList{

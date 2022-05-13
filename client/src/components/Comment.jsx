@@ -52,7 +52,7 @@ export default function Comment(props) {
         <div className="CommentButtons">            
 
                 <button onClick={() => likeComment(comment.id)}><img src={like} width="25px" alt='like' /></button>
-                <p>{comment.likes.length - comment.dislikes.length}</p>
+                <h3>{comment.likes.length - comment.dislikes.length}</h3>
                 <button onClick={() => dislikeComment(comment.id)}><img src={dislike} width="25px" alt='dislike' /></button>
 
             {comment.username === userName && 

@@ -5,6 +5,7 @@
 
 .CommentText{
     margin-top: 5px;    
+    align-self: center;
 }
 
 
@@ -20,4 +21,5 @@
 
 .CommentButtons button{
     width: 20%;
+    margin: 20px;
 }

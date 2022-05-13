@@ -14,8 +14,7 @@ export default function PostCommentsModal() {
 
   function addCommentAction() {
     dispatch(setModalWindow('None'));
-    createComment(comment, commentedPostId, userName);
-    dispatch(setComment(''));
+    createComment(comment, commentedPostId, userName).then(res => {dispatch(setComment(res))})
     getPosts(page).then(res => {
       dispatch(setTotalPages(res.totalPages));
       dispatch(setPosts(res.result));

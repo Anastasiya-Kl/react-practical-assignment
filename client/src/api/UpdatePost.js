@@ -10,7 +10,7 @@ async function updatePost(id, title, likes, dislikes) {
         dislikes
     }
 
-    let response = await fetch(URL, {
+    const response = await fetch(URL, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -18,8 +18,8 @@ async function updatePost(id, title, likes, dislikes) {
         body: JSON.stringify(data),
     });
 
-    const result = await response.json();
-    return result;
+    
+    return response.json();
 }
 
 export default updatePost;

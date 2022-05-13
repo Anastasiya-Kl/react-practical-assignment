@@ -10,6 +10,7 @@ import CommentSection from "./CommentSection";
 import '../css/Post.css';
 import like from '../like.png';
 import dislike from '../dislike.png';
+import flowers from '../flowers.jpg';
 
 export default function Post(props) {
 
@@ -29,6 +30,13 @@ export default function Post(props) {
             dispatch(setPosts(res.result));
         });
     }
+
+    // function likeComment(id) {
+    //     let likes = [...comment.likes];
+    //     likes.push(1);
+    //     updateComment(id, comment.text, likes, comment.dislikes);
+    //     getPosts(page).then(res => dispatch(setPosts(res.result)));
+    // }
 
     function likePost(id) {
         let likes = [...post.likes];
@@ -59,7 +67,7 @@ export default function Post(props) {
     
     return <div className='Post'>
         <h2 className='Title'>{post.title}</h2>
-        <img className='Image' src={post.imageSrc} alt="imagePost" />
+        <img className='Image' src={flowers} alt="imagePost" />
         <p className='Date'>{postDate.slice(0,24)}</p>
         <h3 className='User'>{post.username}</h3>
 
@@ -73,7 +81,7 @@ export default function Post(props) {
             <button 
                 className="AddComment" 
                 onClick={() => {
-                    dispatch(setModalWindow('EditComment'));
+                    dispatch(setModalWindow('PostCommentsModal'));
                     dispatch(setCommentedPostId(post.id));
                 }
             }>Add Comment</button>

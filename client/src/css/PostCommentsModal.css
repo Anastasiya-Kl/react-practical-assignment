@@ -1,5 +1,6 @@
 .PostCommentsModal{
-    width: 33.3%;
+    width: 40%;
+    height: 40%;    
     position: fixed;
     top: 250px;
     left: 33.3%;
@@ -7,9 +8,11 @@
     padding: 15px;
     border-radius: 20px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     box-shadow: 1px 4px 15px 2px rgba(0,0,0,0.73);
+    z-index: 100;
 }
 
 .PostCommentsModal h4{
@@ -18,6 +21,11 @@
 
 .PostCommentsModal input{
     height: 26px;
+    width: 50%;
     padding: 8px;
     outline: none;
+}
+
+.PostCommentsModal button {
+    border-radius: 20px;
 }
