@@ -1,4 +1,4 @@
-import { MAIN_URL } from "./main_url";
+import { MAIN_URL } from "./MainUrl";
 
 async function createComment(text, postId, username) {
     const URL = MAIN_URL + `comment/`;

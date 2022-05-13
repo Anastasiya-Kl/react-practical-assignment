@@ -1,5 +1,6 @@
 import {useEffect} from 'react';
 import './App.css';
+import MainPage from './components/MainPage';
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
 
   return (
     <div className="App">
-      TASK IMPLEMENTATION HERE
+      <MainPage />
     </div>
   );
 }
