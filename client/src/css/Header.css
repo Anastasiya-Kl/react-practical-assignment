@@ -1,0 +1,19 @@
+.Header{    
+    padding: 0 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(163, 3, 110);
+    color: white;
+}
+
+.HeaderButton{
+    height: 40px;
+    border: none;
+    background-color: white;
+    color: rgb(163, 3, 110);
+}
+.HeaderButton:hover{
+    background-color: peachpuff;
+}
