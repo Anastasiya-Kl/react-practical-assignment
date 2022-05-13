@@ -6,6 +6,7 @@ import deletePost from '../api/DeletePost.js';
 import updatePost from '../api/UpdatePost';
 import { setCommentedPostId } from "../redux/createCommentReducer";
 import { setMode, setTitle, setId, setPostDislikes, setPostLikes } from "../redux/createPostReducer";
+import CommentSection from "./CommentSection";
 import '../css/Post.css';
 
 export default function Post(props) {
@@ -81,11 +82,11 @@ export default function Post(props) {
             </>}
         </div>
 
-        {/* <CommentSection 
+        <CommentSection 
             comments={post.comments} 
             commentSectionVision={commentSectionVision} 
             setCommentsSectionVision={setCommentsSectionVision} 
-        /> */}
+        />
     </div>
 
 

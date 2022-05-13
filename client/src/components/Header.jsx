@@ -9,7 +9,7 @@ export default function Header() {
 
     return <div className="Header">
         <h1 className='HeaderUser'>{userName}</h1>
-        <button className='HeaderButton' onClick={() => dispatch(setModalWindow('EditPost')) }>Add new Post</button>
+        <button className='HeaderButton' onClick={() => dispatch(setModalWindow('CreatePostModal')) }>Add new Post</button>
         <button className='HeaderButton' onClick={() => {
             dispatch(changeUserName(''));
             dispatch(changeIsLogged());
